@@ -17,9 +17,9 @@ public class Conexion {
 
     private final String DRIVER = "com.mysql.cj.jdbc.Driver";
     private final String URL = "jdbc:mysql://localhost:3306/";
-    private final String DB = "root";
+    private final String DB = "ferreteria";
     private final String USER = "root";
-    private final String PASSWORD = "ferreteria";
+    private final String PASSWORD = "root";
 
     public Connection cnx;
     public static Conexion instancia;
