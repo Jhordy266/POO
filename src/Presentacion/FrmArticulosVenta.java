@@ -147,14 +147,18 @@ public class FrmArticulosVenta extends javax.swing.JDialog {
     }//GEN-LAST:event_BtnBuscarActionPerformed
 
     private void BtnSeleccionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSeleccionarActionPerformed
+        
+        /* Ya agrega nuevos productos al TblDVentas */ 
+        /* Para corregirlo, tome los datos de las posiciones que realmente contienen nombre, precio y stock:*/
         if (TablaArticulosVenta.getSelectedRowCount() == 1) {
             String id = String.valueOf(TablaArticulosVenta.getValueAt(TablaArticulosVenta.getSelectedRow(), 0));
             String codigo = String.valueOf(TablaArticulosVenta.getValueAt(TablaArticulosVenta.getSelectedRow(), 3));
-            String nombre = String.valueOf(TablaArticulosVenta.getValueAt(TablaArticulosVenta.getSelectedRow(), 4));
-            String precio = String.valueOf(TablaArticulosVenta.getValueAt(TablaArticulosVenta.getSelectedRow(), 5));
-            String stock = String.valueOf(TablaArticulosVenta.getValueAt(TablaArticulosVenta.getSelectedRow(), 6));
+            String nombre = String.valueOf(TablaArticulosVenta.getValueAt(TablaArticulosVenta.getSelectedRow(), 5));
+            String precio = String.valueOf(TablaArticulosVenta.getValueAt(TablaArticulosVenta.getSelectedRow(), 7));
+            String stock = String.valueOf(TablaArticulosVenta.getValueAt(TablaArticulosVenta.getSelectedRow(), 8));
 
             this.vista.agregarDetalles(id, codigo, nombre, stock, precio, "0");
+            dispose();
 
         } else {
             JOptionPane.showMessageDialog(null, "Debe seleccionar el artículo que desea agregar al detalle.");
